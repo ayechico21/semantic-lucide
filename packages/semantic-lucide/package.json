@@ -1,0 +1,27 @@
+{
+  "name": "semantic-lucide",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json --outDir dist-temp && node -e \"const fs=require('fs'); fs.renameSync('dist-temp/index.js','dist/index.mjs'); fs.rmSync('dist-temp',{recursive:true,force:true})\"",
+    "dev": "tsc -w -p tsconfig.json",
+    "clean": "rimraf dist dist-temp"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.6.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}

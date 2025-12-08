@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/semantic-lucide" },
+    { "path": "./packages/demo-app" }
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
+}
